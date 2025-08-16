@@ -1,0 +1,134 @@
+.engine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.engine-card {
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  border: 1px solid #e1e8ed;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.engine-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #ecf0f1;
+}
+
+.engine-card.healthy::before {
+  background: #2ecc71;
+}
+
+.engine-card.warning::before {
+  background: #f39c12;
+}
+
+.engine-card.critical::before {
+  background: #e74c3c;
+}
+
+.engine-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.engine-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.engine-name {
+  color: #2c3e50;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.engine-status-icon {
+  font-size: 20px;
+}
+
+.engine-metrics {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.metric {
+  text-align: center;
+  padding: 12px;
+  background: #f8f9fa;
+  border-radius: 6px;
+}
+
+.metric-label {
+  display: block;
+  color: #7f8c8d;
+  font-size: 12px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 5px;
+}
+
+.metric-value {
+  color: #2c3e50;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.metric-unit {
+  color: #95a5a6;
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 3px;
+}
+
+.rul-progress {
+  margin-bottom: 15px;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #ecf0f1;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  transition: width 0.3s ease;
+  border-radius: 4px;
+}
+
+.engine-footer {
+  padding-top: 10px;
+  border-top: 1px solid #ecf0f1;
+}
+
+.last-maintenance {
+  color: #95a5a6;
+  font-size: 11px;
+}
